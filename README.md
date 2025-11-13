@@ -65,14 +65,14 @@ python openai_test.py
 
 ---
 
-## 📝 Person A Aufgaben (Phase 1)
+## 📝 Team 1 Aufgaben (Phase 1)
 - Erstellung der **4 fiktiven Parteien** mit Namen, Slogans und Beschreibung (`parties_info.json`)
 - Erstellung der **Wissensbasis** (`knowledge_base.json`) für politische Themen
 - Erstellung von **typischen Wählerfragen** (`faqs.json`)
 
 ---
 
-## 📝 Person B Aufgaben (Phase 1)
+## 📝 Team 1 Aufgaben (Phase 1)
 - Einrichtung der **OpenAI API** und Testskript (`openai_test.py`)
 - Planung der **Backend-Architektur** für spätere Integration
 
@@ -88,10 +88,8 @@ python openai_test.py
 ## 👥 Team
 | Name | Rolle |
 |------|------|
-| Ahmed | Person A – Content & Ethics |
-| Ayoub | Person B – Backend & AI |
-| Walid | Person C – Frontend & UX |
-| Ibrahim | Person D – QA & Documentation |
+| Ayoub & Ahmed | Team 1 - Content, Ethics, Backend & AI |
+| Ibrahim & Walid | Team 2 - Frontend, UX, QA & Documentation |
 
 ---
 
