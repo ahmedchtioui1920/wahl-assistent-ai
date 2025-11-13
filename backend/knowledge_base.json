@@ -1,32 +1,32 @@
 {
   "Umwelt": {
-    "Fortschrittspartei": "Setzt auf grüne Technologien, Innovation und Emissionssenkung durch Forschung.",
-    "Bewahrungspartei": "Befürwortet Umweltschutz, jedoch mit Fokus auf wirtschaftliche Verträglichkeit.",
-    "Ökologische Partei": "Lehnt fossile Energien ab, fordert sofortigen Umstieg auf erneuerbare Energien.",
-    "Soziale Gerechtigkeitspartei": "Verbindet Klimapolitik mit sozialer Gerechtigkeit, z.B. Förderung grüner Arbeitsplätze."
+    "Fortschrittspartei": "Fördert innovative Technologien, Investitionen in erneuerbare Energien und Maßnahmen zur Reduktion von Emissionen.",
+    "Bewahrungspartei": "Unterstützt Umweltschutz, aber bevorzugt Lösungen, die wirtschaftlich tragbar und sozial ausgewogen sind.",
+    "Ökologische Partei": "Setzt auf sofortigen Umstieg auf erneuerbare Energien, strikte Reduktion von CO2 und Schutz natürlicher Lebensräume.",
+    "Soziale Gerechtigkeitspartei": "Kombiniert Umweltpolitik mit sozialer Verantwortung, fördert nachhaltige Jobs und umweltfreundliche Infrastruktur für alle."
   },
   "Wirtschaft": {
-    "Fortschrittspartei": "Fördert Start-ups, KI, Digitalisierung und nachhaltiges Wachstum.",
-    "Bewahrungspartei": "Betont Haushaltsdisziplin, Stärkung des Mittelstands und niedrige Steuern.",
-    "Ökologische Partei": "Bevorzugt regionale und nachhaltige Wirtschaftskreisläufe.",
-    "Soziale Gerechtigkeitspartei": "Setzt auf Umverteilung, faire Löhne und soziale Sicherheit."
+    "Fortschrittspartei": "Unterstützt Start-ups, Digitalisierung, KI-Anwendungen und nachhaltige Wachstumsstrategien.",
+    "Bewahrungspartei": "Fokussiert auf Mittelstandsstärkung, stabile Märkte und konservative Haushaltsführung.",
+    "Ökologische Partei": "Priorisiert regionale Wirtschaftskreisläufe, nachhaltige Produktion und umweltfreundliche Unternehmen.",
+    "Soziale Gerechtigkeitspartei": "Verfolgt Umverteilung, faire Löhne und soziale Sicherheit, um wirtschaftliche Ungleichheit zu minimieren."
   },
   "Bildung": {
-    "Fortschrittspartei": "Digitalisierung der Schulen und Förderung von MINT-Fächern.",
-    "Bewahrungspartei": "Werteerziehung, klassische Bildung und Stärkung traditioneller Lernformen.",
-    "Ökologische Partei": "Bildung für Nachhaltigkeit und Umweltbewusstsein.",
-    "Soziale Gerechtigkeitspartei": "Kostenlose Bildung und gleiche Chancen für alle Kinder."
+    "Fortschrittspartei": "Setzt auf Digitalisierung, Förderung von MINT-Fächern und moderne Lernmethoden.",
+    "Bewahrungspartei": "Betont klassische Bildung, Werteerziehung und Traditionsbewusstsein in Schulen.",
+    "Ökologische Partei": "Führt Bildungsprogramme zu Nachhaltigkeit, Umweltschutz und ökologischer Verantwortung ein.",
+    "Soziale Gerechtigkeitspartei": "Garantiert kostenfreie Bildung und gleiche Chancen für alle Kinder unabhängig vom sozialen Hintergrund."
   },
   "Gesundheit": {
-    "Fortschrittspartei": "Setzt auf eHealth, Telemedizin und datenbasierte Innovation.",
-    "Bewahrungspartei": "Bewahrt das bestehende System, fördert Hausärzte und ländliche Versorgung.",
-    "Ökologische Partei": "Fördert Prävention, ökologische Ernährung und Nachhaltigkeit im Gesundheitswesen.",
-    "Soziale Gerechtigkeitspartei": "Sichert das Gesundheitssystem als Grundrecht für alle Bürger."
+    "Fortschrittspartei": "Fördert digitale Gesundheitstechnologien, Telemedizin und datenbasierte Innovationen.",
+    "Bewahrungspartei": "Bewahrt das bestehende Gesundheitssystem, unterstützt Hausärzte und stabile Versorgung in ländlichen Regionen.",
+    "Ökologische Partei": "Setzt auf Prävention, gesunde Ernährung und nachhaltige Medizinpraktiken.",
+    "Soziale Gerechtigkeitspartei": "Sichert allen Bürgerinnen und Bürgern Zugang zu hochwertiger medizinischer Versorgung als Grundrecht."
   },
   "Migration": {
-    "Fortschrittspartei": "Unterstützt qualifizierte Einwanderung und digitale Integration.",
-    "Bewahrungspartei": "Begrenzte Migration, Integration durch Pflichten und Wertevermittlung.",
-    "Ökologische Partei": "Offene Grenzen für humanitäre Hilfe, globale Solidarität.",
-    "Soziale Gerechtigkeitspartei": "Solidarische Aufnahme, faire Chancen und Integrationsförderung."
+    "Fortschrittspartei": "Unterstützt qualifizierte Zuwanderung und integrative digitale Programme zur Teilhabe.",
+    "Bewahrungspartei": "Begrenzte Migration, mit Fokus auf Integration durch gesellschaftliche Regeln und Wertevermittlung.",
+    "Ökologische Partei": "Offene Haltung bei humanitärer Migration, globale Solidarität und Verantwortung.",
+    "Soziale Gerechtigkeitspartei": "Fördert solidarische Aufnahme, Integration und Chancengleichheit für alle Migranten."
   }
 }
