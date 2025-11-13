@@ -1,0 +1,32 @@
+{
+  "Umwelt": {
+    "Fortschrittspartei": "Setzt auf grüne Technologien, Innovation und Emissionssenkung durch Forschung.",
+    "Bewahrungspartei": "Befürwortet Umweltschutz, jedoch mit Fokus auf wirtschaftliche Verträglichkeit.",
+    "Ökologische Partei": "Lehnt fossile Energien ab, fordert sofortigen Umstieg auf erneuerbare Energien.",
+    "Soziale Gerechtigkeitspartei": "Verbindet Klimapolitik mit sozialer Gerechtigkeit, z.B. Förderung grüner Arbeitsplätze."
+  },
+  "Wirtschaft": {
+    "Fortschrittspartei": "Fördert Start-ups, KI, Digitalisierung und nachhaltiges Wachstum.",
+    "Bewahrungspartei": "Betont Haushaltsdisziplin, Stärkung des Mittelstands und niedrige Steuern.",
+    "Ökologische Partei": "Bevorzugt regionale und nachhaltige Wirtschaftskreisläufe.",
+    "Soziale Gerechtigkeitspartei": "Setzt auf Umverteilung, faire Löhne und soziale Sicherheit."
+  },
+  "Bildung": {
+    "Fortschrittspartei": "Digitalisierung der Schulen und Förderung von MINT-Fächern.",
+    "Bewahrungspartei": "Werteerziehung, klassische Bildung und Stärkung traditioneller Lernformen.",
+    "Ökologische Partei": "Bildung für Nachhaltigkeit und Umweltbewusstsein.",
+    "Soziale Gerechtigkeitspartei": "Kostenlose Bildung und gleiche Chancen für alle Kinder."
+  },
+  "Gesundheit": {
+    "Fortschrittspartei": "Setzt auf eHealth, Telemedizin und datenbasierte Innovation.",
+    "Bewahrungspartei": "Bewahrt das bestehende System, fördert Hausärzte und ländliche Versorgung.",
+    "Ökologische Partei": "Fördert Prävention, ökologische Ernährung und Nachhaltigkeit im Gesundheitswesen.",
+    "Soziale Gerechtigkeitspartei": "Sichert das Gesundheitssystem als Grundrecht für alle Bürger."
+  },
+  "Migration": {
+    "Fortschrittspartei": "Unterstützt qualifizierte Einwanderung und digitale Integration.",
+    "Bewahrungspartei": "Begrenzte Migration, Integration durch Pflichten und Wertevermittlung.",
+    "Ökologische Partei": "Offene Grenzen für humanitäre Hilfe, globale Solidarität.",
+    "Soziale Gerechtigkeitspartei": "Solidarische Aufnahme, faire Chancen und Integrationsförderung."
+  }
+}
