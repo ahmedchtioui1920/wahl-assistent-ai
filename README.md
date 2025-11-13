@@ -12,10 +12,10 @@ Dieses Projekt ist ein **KI-gestützter Wahl-Chatbot**, der politische Parteien 
 
 Der Chatbot antwortet neutral auf Fragen zu verschiedenen politischen Themen, basierend auf **vordefinierten Parteipositionen** und **FAQ-Fragen**. Die Arbeit erfolgt in Teamarbeit mit klaren Rollen:
 
-- **Ahmed (Person A)** – Content & Ethics: Erstellung der Parteienprofile, Wissensbasis und FAQs
-- **Ayoub (Person B)** – Backend & AI: OpenAI API-Test, Backend-Struktur
-- **Walid (Person C)** – Frontend & UX: UI-Design, HTML/CSS/JS (Phase 2)
-- **Ibrahim (Person D)** – QA & Documentation: Testfälle, Dokumentation (Phase 2)
+- **Team 1** – Content & Ethics: Erstellung der Parteienprofile, Wissensbasis und FAQs
+- **Team 1** – Backend & AI: OpenAI API-Test, Backend-Struktur
+- **Team 2** – Frontend & UX: UI-Design, HTML/CSS/JS (Phase 2)
+- **Team 2** – QA & Documentation: Testfälle, Dokumentation (Phase 2)
 
 ---
 
