@@ -1,13 +1,20 @@
 from openai import OpenAI
+import os
+from dotenv import load_dotenv
 
-client = OpenAI(api_key="YOUR_API_KEY_HERE")  # Replace with your API key
+# Load environment variables
+load_dotenv()
 
-response = client.chat.completions.create(
-    model="gpt-4",
-    messages=[
-        {"role": "system", "content": "You are a helpful political chatbot."},
-        {"role": "user", "content": "Was hält die Ökologische Partei von Atomkraft?"}
-    ]
-)
+# Initialize OpenAI client
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-print(response.choices[0].message.content)
+# Test the API connection
+try:
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "Du bist ein hilfreicher politischer Chatbot."},
+            {"role": "user", "content": "Was hält die Ökologische Partei von Atomkraft?"}
+        ]
+    )
+    print("✅ OpenAI API Test erfolgreich!\\n\")\n    print(\"Antwort:\", response.choices[0].message.content)\nexcept Exception as e:\n    print(\"❌ Fehler beim API-Test:\")\n    print(str(e))
