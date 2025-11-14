@@ -35,33 +35,54 @@ wahl-chatbot-accountability/
 
 ## ⚙️ Setup-Anleitung
 
+### ⚠️ WICHTIGER SICHERHEITSHINWEIS
+**Ihr OpenAI API-Key muss sofort regeneriert werden!** Der aktuelle Key in der `.env` Datei wurde möglicherweise öffentlich sichtbar und sollte aus Sicherheitsgründen ersetzt werden.
+
+1. Gehen Sie zu [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
+2. Löschen Sie den alten Key
+3. Erstellen Sie einen neuen API-Key
+4. Ersetzen Sie den Key in der `.env` Datei
+
+### Installation
+
 1. **Repository klonen**
 ```bash
 git clone https://github.com/ahmedchtioui1920/wahl-chatbot-accountability.git
-cd wahl-chatbot-accountability/backend
+cd wahl-chatbot-accountability
 ```
 
 2. **Python-Umgebung einrichten** (optional, aber empfohlen)
 ```bash
 python -m venv venv
-source venv/bin/activate       # Linux/Mac
 venv\Scripts\activate          # Windows
 ```
 
 3. **Abhängigkeiten installieren**
 ```bash
-pip install flask flask-cors openai
+pip install -r requirements.txt
 ```
 
 4. **OpenAI API Key eintragen**
-- Erstelle einen API-Key auf [platform.openai.com](https://platform.openai.com/)
-- Ersetze `"YOUR_API_KEY_HERE"` in `openai_test.py` durch deinen Key
+- Erstellen Sie einen API-Key auf [platform.openai.com](https://platform.openai.com/)
+- Öffnen Sie die `.env` Datei im Hauptverzeichnis
+- Ersetzen Sie `your_api_key_here` durch Ihren echten API-Key
+- **Wichtig:** Teilen Sie die `.env` Datei niemals öffentlich!
 
 5. **Testen der OpenAI-Verbindung**
 ```bash
+cd backend
 python openai_test.py
 ```
-- Es sollte eine Antwort zu deiner Testfrage ausgegeben werden.
+
+6. **Backend starten**
+```bash
+python app.py
+```
+- Der Server läuft auf `http://localhost:5000`
+
+7. **Frontend öffnen**
+- Öffnen Sie `frontend/index.html` in Ihrem Browser
+- Oder nutzen Sie einen lokalen Webserver (z.B. Live Server Extension in VS Code)
 
 ---
 
