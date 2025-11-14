@@ -17,4 +17,8 @@ try:
             {"role": "user", "content": "Was hält die Ökologische Partei von Atomkraft?"}
         ]
     )
-    print("✅ OpenAI API Test erfolgreich!\\n\")\n    print(\"Antwort:\", response.choices[0].message.content)\nexcept Exception as e:\n    print(\"❌ Fehler beim API-Test:\")\n    print(str(e))
+    print("✅ OpenAI API Test erfolgreich!\n")
+    print("Antwort:", response.choices[0].message.content)
+except Exception as e:
+    print("❌ Fehler beim API-Test:")
+    print(str(e))

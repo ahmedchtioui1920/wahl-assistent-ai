@@ -3,16 +3,21 @@ from flask_cors import CORS
 import json
 from openai import OpenAI
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv()
+# Get the base directory (project root)
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from project root
+load_dotenv(BASE_DIR / ".env")
 
 # Initialize OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Load knowledge base
 try:
-    with open("knowledge_base.json", "r", encoding="utf-8") as f:
+    with open(BASE_DIR / "backend" / "knowledge_base.json", "r", encoding="utf-8") as f:
         knowledge_base = json.load(f)
 except FileNotFoundError:
     print("Error: knowledge_base.json not found")
@@ -20,7 +25,7 @@ except FileNotFoundError:
 
 # Load parties information
 try:
-    with open("../data/parties_info.json", "r", encoding="utf-8") as f:
+    with open(BASE_DIR / "data" / "parties_info.json", "r", encoding="utf-8") as f:
         parties_info = json.load(f)
 except FileNotFoundError:
     print("Error: parties_info.json not found")
@@ -28,7 +33,7 @@ except FileNotFoundError:
 
 # Load system prompt
 try:
-    with open("../system_prompt.txt", "r", encoding="utf-8") as f:
+    with open(BASE_DIR / "system_prompt.txt", "r", encoding="utf-8") as f:
         system_prompt = f.read()
 except FileNotFoundError:
     print("Error: system_prompt.txt not found")
