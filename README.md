@@ -60,7 +60,6 @@ wahl-assistent-ai/
 │  ├─ parties_info.json       # Zusatzinformationen zu Parteien
 │  ├─ system_prompt.txt       # System-Prompt für KI
 │  ├─ requirements.txt        # Python-Pakete
-│  ├─ .env                    # OpenAI API Key (nicht hochladen!)
 │  └─ data/                   # Zusätzliche Daten, z.B. FAQs
 ├─ frontend/
 │  ├─ index.html              # Haupt-Frontend-Datei
