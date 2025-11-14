@@ -19,36 +19,36 @@ Der Chatbot antwortet neutral auf Fragen zu verschiedenen politischen Themen, ba
 
 ---
 
-## 🗂️ Projektstruktur (Phase 1)
+## 🗂️ Projektstruktur
 
 ```
-wahl-chatbot-accountability/
+wahl-assistent-ai/
+├── .gitignore                   # Git-Ausschlussliste
+├── requirements.txt             # Python-Abhängigkeiten
+├── system_prompt.txt            # System-Prompt für den KI-Chatbot
 ├── backend/
+│   ├── app.py                   # Flask Backend-Server
 │   ├── openai_test.py           # Testscript für OpenAI API
 │   └── knowledge_base.json      # Wissensbasis: Parteienpositionen nach Themen
-└── data/
-    ├── parties_info.json        # Name, Slogan und Beschreibung der Parteien
-    └── faqs.json                # Beispiel-Fragen für den Chatbot
+├── data/
+│   ├── parties_info.json        # Name, Slogan und Beschreibung der Parteien
+│   └── faqs.json                # Beispiel-Fragen für den Chatbot
+└── frontend/
+    ├── index.html               # Hauptseite des Chatbots
+    ├── app.js                   # Frontend-Logik
+    └── style.css                # Styling
 ```
 
 ---
 
 ## ⚙️ Setup-Anleitung
 
-### ⚠️ WICHTIGER SICHERHEITSHINWEIS
-**Ihr OpenAI API-Key muss sofort regeneriert werden!** Der aktuelle Key in der `.env` Datei wurde möglicherweise öffentlich sichtbar und sollte aus Sicherheitsgründen ersetzt werden.
-
-1. Gehen Sie zu [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
-2. Löschen Sie den alten Key
-3. Erstellen Sie einen neuen API-Key
-4. Ersetzen Sie den Key in der `.env` Datei
-
 ### Installation
 
 1. **Repository klonen**
 ```bash
-git clone https://github.com/ahmedchtioui1920/wahl-chatbot-accountability.git
-cd wahl-chatbot-accountability
+git clone https://github.com/ahmedchtioui1920/wahl-assistent-ai.git
+cd wahl-assistent-ai
 ```
 
 2. **Python-Umgebung einrichten** (optional, aber empfohlen)
@@ -62,27 +62,39 @@ venv\Scripts\activate          # Windows
 pip install -r requirements.txt
 ```
 
-4. **OpenAI API Key eintragen**
-- Erstellen Sie einen API-Key auf [platform.openai.com](https://platform.openai.com/)
-- Öffnen Sie die `.env` Datei im Hauptverzeichnis
-- Ersetzen Sie `your_api_key_here` durch Ihren echten API-Key
-- **Wichtig:** Teilen Sie die `.env` Datei niemals öffentlich!
-
-5. **Testen der OpenAI-Verbindung**
+4. **OpenAI API Key konfigurieren**
+- Erstellen Sie einen neuen API-Key auf [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
+- Erstellen Sie eine `.env` Datei im Hauptverzeichnis:
 ```bash
-cd backend
-python openai_test.py
+echo OPENAI_API_KEY=your_api_key_here > .env
 ```
+- Ersetzen Sie `your_api_key_here` durch Ihren echten API-Key
+- **Wichtig:** Die `.env` Datei wird durch `.gitignore` geschützt und sollte niemals öffentlich geteilt werden!
+
+5. **API-Verbindung testen (optional)**
+```bash
+python backend/openai_test.py
+```
+Sollte eine erfolgreiche Antwort vom Chatbot anzeigen.
 
 6. **Backend starten**
 ```bash
-python app.py
+python backend/app.py
 ```
-- Der Server läuft auf `http://localhost:5000`
+- Der Flask-Server läuft auf `http://127.0.0.1:5000`
+- Sie können das Backend auch aus dem Hauptverzeichnis starten
 
 7. **Frontend öffnen**
-- Öffnen Sie `frontend/index.html` in Ihrem Browser
-- Oder nutzen Sie einen lokalen Webserver (z.B. Live Server Extension in VS Code)
+- **Option A:** Öffnen Sie `frontend/index.html` direkt in Ihrem Browser
+- **Option B (empfohlen):** Nutzen Sie die "Live Server" Extension in VS Code:
+  - Rechtsklick auf `frontend/index.html` → "Open with Live Server"
+  - Öffnet den Chatbot mit Auto-Reload bei Änderungen
+
+8. **Chatbot nutzen**
+- Stellen Sie sicher, dass das Backend läuft
+- Öffnen Sie das Frontend im Browser
+- Wählen Sie eine Beispielfrage oder stellen Sie eine eigene Frage
+- Der Chatbot antwortet basierend auf der Wissensbasis
 
 ---
 
@@ -99,10 +111,26 @@ python app.py
 
 ---
 
-## 🔖 Ziele Phase 1
-- Vollständige **Content-Erstellung** (Parteien, Wissen, FAQs)
-- Funktionsfähiger **API-Test** mit OpenAI
-- Bereitstellung einer **sauberen Projektstruktur** für Phase 2
+## 🔖 Projektstatus
+
+### ✅ Abgeschlossen
+- **Content-Erstellung:** 4 Parteien mit Positionen zu 5 Themen
+- **Backend:** Flask-API mit OpenAI-Integration
+- **Frontend:** Funktionsfähige Chat-Oberfläche mit Verlauf
+- **Wissensbasis:** Strukturierte JSON-Dateien für Parteien und FAQs
+- **Umgebungskonfiguration:** .env-basierte API-Key-Verwaltung
+- **System-Prompt:** Neutraler, informativer Chatbot-Prompt
+
+### 🔄 In Entwicklung
+- Testing & Quality Assurance
+- Erweiterte Chat-Features (z.B. Persistierung)
+- Dokumentation & Deployment
+
+## 🛠️ Technologie-Stack
+- **Backend:** Python, Flask, OpenAI API
+- **Frontend:** HTML, CSS, JavaScript
+- **KI-Modell:** GPT-4
+- **Datenverwaltung:** JSON-basierte Wissensbasis
 
 ---
 
