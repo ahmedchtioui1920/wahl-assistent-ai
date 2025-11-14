@@ -54,7 +54,6 @@ Das Projekt wird im Rahmen des Seminars *„Kann Code Verantwortung? Wie man Alg
 ## Projektstruktur
 ```
 wahl-assistent-ai/
-├── .env                         # Umgebungsvariablen (OpenAI API Key) - NICHT committen!
 ├── .gitignore                   # Git-Ausschlussliste
 ├── requirements.txt             # Python-Abhängigkeiten
 ├── system_prompt.txt            # System-Prompt für den KI-Chatbot
