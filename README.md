@@ -1,121 +1,127 @@
-# Wahl-Chatbot & Algorithmic Accountability
+# Wahl-Chatbot – Politischer Chatbot zur Parteieninformation
 
-**Seminar:** "Kann Code Verantwortung? Wie man Algorithmic Accountability untersucht und vermittelt?"
-**Projekt:** Entwicklung eines Prototyp-Wahl-Chatbots zur Untersuchung von *Algorithmic Accountability*
-**Zeitrahmen:** 5 Wochen
+## Projektbeschreibung
+Der **Wahl-Chatbot** ist ein Prototyp, der Benutzer:innen ermöglicht, Fragen zu fiktiven politischen Parteien zu stellen.  
+Ziel des Projekts ist es, **Algorithmic Accountability** zu untersuchen und zu zeigen, wie KI-basierte Systeme auf politische Fragen neutral und sachlich antworten können.  
 
----
-
-## 📖 Projektbeschreibung
-
-Dieses Projekt ist ein **KI-gestützter Wahl-Chatbot**, der politische Parteien simuliert und es erlaubt, **algorithmische Verantwortung** (Algorithmic Accountability) zu erforschen.
-
-Der Chatbot antwortet neutral auf Fragen zu verschiedenen politischen Themen, basierend auf **vordefinierten Parteipositionen** und **FAQ-Fragen**. Die Arbeit erfolgt in Teamarbeit mit klaren Rollen:
-
-- **Team 1** – Content & Ethics: Erstellung der Parteienprofile, Wissensbasis und FAQs
-- **Team 1** – Backend & AI: OpenAI API-Test, Backend-Struktur
-- **Team 2** – Frontend & UX: UI-Design, HTML/CSS/JS (Phase 2)
-- **Team 2** – QA & Documentation: Testfälle, Dokumentation (Phase 2)
+Das Projekt wird im Rahmen des Seminars *„Kann Code Verantwortung? Wie man Algorithmic Accountability untersucht und vermittelt?“* entwickelt.
 
 ---
 
-## 🗂️ Projektstruktur (Phase 1)
+## Parteien im Prototyp
+1. **Fortschrittspartei**  
+   *Slogan:* „Innovation und Zukunft für alle“  
+   Fokus: Technologie, Digitalisierung, erneuerbare Energien, MINT-Bildung.
 
+2. **Bewahrungspartei**  
+   *Slogan:* „Tradition bewahren, Werte schützen“  
+   Fokus: Konservative Werte, stabile Wirtschaft, klassische Bildung.
+
+3. **Ökologische Partei**  
+   *Slogan:* „Nachhaltigkeit jetzt“  
+   Fokus: Umwelt, Klimaschutz, erneuerbare Energien.
+
+4. **Soziale Gerechtigkeitspartei**  
+   *Slogan:* „Gleichheit und Chancengleichheit für alle“  
+   Fokus: Soziale Sicherheit, Umverteilung, faire Bildung, Solidarität.
+
+---
+
+## Features
+- Chatbot, der Fragen zu den Parteien beantwortet  
+- Anzeige von 15 Beispiel-Fragen für Benutzer:innen  
+- Chatverlauf und neue Chat-Funktion  
+- Frontend: HTML/CSS/JavaScript (responsive)  
+- Backend: Python + Flask + OpenAI API  
+- System-Prompt für neutrale, sachliche Antworten  
+- Fehler-Handling bei API-Ausfällen  
+- Absolute Pfade im Backend, um von jedem Arbeitsverzeichnis aus zu funktionieren
+
+---
+
+## Verwendete Tools & Technologien
+- **Python 3.11+**: Backend-Logik und API-Server  
+- **Flask**: Webframework für RESTful API  
+- **Flask-CORS**: Erlaubt Kommunikation zwischen Frontend und Backend  
+- **OpenAI API**: GPT-4 für KI-Antworten  
+- **dotenv**: Laden von Umgebungsvariablen, insbesondere OpenAI API Key  
+- **HTML/CSS/JS**: Frontend, Chatfenster, Chatverlauf, Beispiel-Fragen  
+- **Visual Studio Code**: Entwicklung und Live Server für Frontend-Test  
+- **Git/GitHub**: Versionskontrolle und Team-Kollaboration
+
+---
+
+## Projektstruktur
 ```
-wahl-chatbot-accountability/
-├── backend/
-│   ├── openai_test.py           # Testscript für OpenAI API
-│   └── knowledge_base.json      # Wissensbasis: Parteienpositionen nach Themen
-└── data/
-    ├── parties_info.json        # Name, Slogan und Beschreibung der Parteien
-    └── faqs.json                # Beispiel-Fragen für den Chatbot
+wahl-assistent-ai/
+├─ backend/
+│  ├─ app.py                  # Flask Backend, nutzt absolute Pfade
+│  ├─ knowledge_base.json     # Parteiwissen
+│  ├─ parties_info.json       # Zusatzinformationen zu Parteien
+│  ├─ system_prompt.txt       # System-Prompt für KI
+│  ├─ requirements.txt        # Python-Pakete
+│  └─ data/                   # Zusätzliche Daten, z.B. FAQs
+├─ frontend/
+│  ├─ index.html              # Haupt-Frontend-Datei
+│  ├─ style.css               # Styling für Chat und Layout
+│  └─ app.js                  # JS-Logik für Chat, Vorschläge, Verlauf
+├─ .gitignore
+└─ README.md
 ```
 
 ---
 
-## ⚙️ Setup-Anleitung
+## Installation & Setup
 
-### ⚠️ WICHTIGER SICHERHEITSHINWEIS
-**Ihr OpenAI API-Key muss sofort regeneriert werden!** Der aktuelle Key in der `.env` Datei wurde möglicherweise öffentlich sichtbar und sollte aus Sicherheitsgründen ersetzt werden.
-
-1. Gehen Sie zu [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
-2. Löschen Sie den alten Key
-3. Erstellen Sie einen neuen API-Key
-4. Ersetzen Sie den Key in der `.env` Datei
-
-### Installation
-
-1. **Repository klonen**
+### 1. Repository klonen
 ```bash
-git clone https://github.com/ahmedchtioui1920/wahl-chatbot-accountability.git
-cd wahl-chatbot-accountability
+git clone https://github.com/ahmedchtioui1920/wahl-assistent-ai.git
+cd wahl-assistent-ai/backend
 ```
 
-2. **Python-Umgebung einrichten** (optional, aber empfohlen)
+### 2. (Optional) Virtuelle Umgebung erstellen
 ```bash
 python -m venv venv
-venv\Scripts\activate          # Windows
+.\\venv\\Scripts\\activate   # Windows
+# oder
+source venv/bin/activate     # Mac/Linux
 ```
 
-3. **Abhängigkeiten installieren**
+### 3. Abhängigkeiten installieren
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **OpenAI API Key eintragen**
-- Erstellen Sie einen API-Key auf [platform.openai.com](https://platform.openai.com/)
-- Öffnen Sie die `.env` Datei im Hauptverzeichnis
-- Ersetzen Sie `your_api_key_here` durch Ihren echten API-Key
-- **Wichtig:** Teilen Sie die `.env` Datei niemals öffentlich!
-
-5. **Testen der OpenAI-Verbindung**
-```bash
-cd backend
-python openai_test.py
+### 4. OpenAI API Key einrichten
+- Erstelle eine `.env` Datei im `backend/` Ordner:
 ```
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
+```
+- Stelle sicher, dass `.env` in `.gitignore` steht.
 
-6. **Backend starten**
+### 5. Server starten
 ```bash
 python app.py
 ```
-- Der Server läuft auf `http://localhost:5000`
-
-7. **Frontend öffnen**
-- Öffnen Sie `frontend/index.html` in Ihrem Browser
-- Oder nutzen Sie einen lokalen Webserver (z.B. Live Server Extension in VS Code)
+- Der Server läuft unter `http://127.0.0.1:5000`
 
 ---
 
-## 📝 Team 1 Aufgaben (Phase 1)
-- Erstellung der **4 fiktiven Parteien** mit Namen, Slogans und Beschreibung (`parties_info.json`)
-- Erstellung der **Wissensbasis** (`knowledge_base.json`) für politische Themen
-- Erstellung von **typischen Wählerfragen** (`faqs.json`)
+## Frontend starten
+- Öffne `frontend/index.html` im Browser (z.B. via Live Server in VSCode)  
+- Interagiere mit dem Chatbot  
+- Beispiel-Fragen werden rechts angezeigt, Chat-Verlauf links  
+- Neuer Chat Button erstellt einen frischen Chat und speichert den vorherigen Verlauf
 
 ---
 
-## 📝 Team 1 Aufgaben (Phase 1)
-- Einrichtung der **OpenAI API** und Testskript (`openai_test.py`)
-- Planung der **Backend-Architektur** für spätere Integration
+## Nutzungshinweise
+- Chatbot beantwortet nur Fragen, die in der Wissensbasis enthalten sind  
+- Bei unbekannten Fragen wird höflich auf fehlende Informationen hingewiesen  
+- Alle Antworten basieren auf **neutraler Wissensbasis**  
+- Keine persönliche Meinung des Bots  
 
 ---
 
-## 🔖 Ziele Phase 1
-- Vollständige **Content-Erstellung** (Parteien, Wissen, FAQs)
-- Funktionsfähiger **API-Test** mit OpenAI
-- Bereitstellung einer **sauberen Projektstruktur** für Phase 2
-
----
-
-## 👥 Team
-| Name | Rolle |
-|------|------|
-| Ayoub & Ahmed | Team 1 - Content, Ethics, Backend & AI |
-| Ibrahim & Walid | Team 2 - Frontend, UX, QA & Documentation |
-
----
-
-## 📌 Hinweise
-- Dieses Repo repräsentiert **Phase 1 des Projekts**.
-- Phase 2 wird **Frontend & Core Integration** enthalten, Phase 3 **Testing & Abschluss**.
-- Der Chatbot ist **neutral**, um Bias zu vermeiden und Algorithmic Accountability zu prüfen.
-
+## Lizenz
+Dieses Projekt ist für Bildungs- und Seminarzwecke erstellt.
