@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahlchatbot - Deutsche Parteien</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Wahlchatbot</h1>
+            <p class="subtitle">Informieren Sie sich über die deutschen Parteien</p>
+        </header>
+        
+        <div class="chat-container">
+            <div class="chat-header">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="currentColor"/>
+                </svg>
+                <h2>Wahlberater</h2>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <!-- Nachrichten werden hier dynamisch eingefügt -->
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Stellen Sie eine Frage...">
+                <button id="sendButton">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="parties-container" id="partiesContainer">
+            <!-- Parteien-Karten werden hier dynamisch eingefügt -->
+        </div>
+        
+        <footer>
+            <p>© 2025 Wahlchatbot - Ein Informationsservice für Wähler</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
