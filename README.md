@@ -160,14 +160,16 @@ Dieses Projekt ist für Bildungs- und Seminarzwecke erstellt.
      (z. B. Bias-Erkennung, politisch neutrale Re-Framing-Logik)
 3. Der Server gibt die finale, bereinigte Antwort an den Client zurück.
 
-🔹 Request-Format (an den Server)
+###  Request-Format (an den Server)
 ```json
 {
   "message": "string",
   "session_id": "string"
 }
+```
 
 ### Response-Format (vom Server zurück an den Client)
+```json
 {
   "reply": "string",
   "flags"(optional): {
@@ -175,4 +177,5 @@ Dieses Projekt ist für Bildungs- und Seminarzwecke erstellt.
     "political_endorsement_detected": false
   }
 }
+```
 
