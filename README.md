@@ -144,3 +144,35 @@ python backend/app.py
 
 ## Lizenz
 Dieses Projekt ist für Bildungs- und Seminarzwecke erstellt.
+
+---
+
+## 📡 API Endpoint: `/chat`  
+
+**als Proxy**: Der Client sendet eine Nachricht an `/chat`, der Server leitet diese Anfrage an die ChatGPT-API weiter, verarbeitet das Ergebnis und liefert eine politisch neutrale, gefilterte Antwort zurück
+
+🔹 Funktionsweise
+1. Der Client sendet eine Nutzerfrage an `/chat`.
+2. Der Server übernimmt:
+   - Validierung der Nutzereingabe  
+   - Anfrage an die ChatGPT-API (z. B. `POST https://api.openai.com/v1/chat/completions`)  
+   - Anwendung eigener Filter und Accountability-Checks  
+     (z. B. Bias-Erkennung, politisch neutrale Re-Framing-Logik)
+3. Der Server gibt die finale, bereinigte Antwort an den Client zurück.
+
+🔹 Request-Format (an den Server)
+```json
+{
+  "message": "string",
+  "session_id": "string"
+}
+
+### Response-Format (vom Server zurück an den Client)
+{
+  "reply": "string",
+  "flags"(optional): {
+    "bias_detected": false,
+    "political_endorsement_detected": false
+  }
+}
+
