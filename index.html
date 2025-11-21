@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahlchatbot - Deutsche Parteien</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Linke Sidebar - Chat-Verlauf -->
+        <div class="sidebar-left">
+            <div class="sidebar-header">
+                <button class="new-chat-btn" id="newChatButton">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    Neuer Chat
+                </button>
+            </div>
+            <div class="chat-history" id="chatHistory">
+                <!-- Chat-Verlauf wird hier eingefügt -->
+            </div>
+        </div>
+
+        <!-- Hauptbereich - Chat -->
+        <div class="main-content">
+            <div class="main-header">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <div class="logo">WB</div>
+                        <span class="logo-text">Wahlchatbot</span>
+                    </div>
+                    <div class="header-subtitle">
+                        Informieren Sie sich über deutsche Parteien und politische Themen
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <!-- Chat-Nachrichten werden hier eingefügt -->
+            </div>
+
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <div class="chat-input">
+                        <textarea id="userInput" placeholder="Stellen Sie Ihre Frage an den Wahlchatbot..."></textarea>
+                        <button class="send-button" id="sendButton">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="input-footer">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rechte Sidebar - FAQ -->
+        <div class="sidebar-right">
+            <div class="sidebar-header">
+                <h2 class="faq-title">Häufige Fragen</h2>
+                <p class="faq-subtitle">Wählen Sie eine Frage aus der Liste</p>
+            </div>
+            <div class="faq-list" id="faqList">
+                <!-- FAQ Fragen werden hier eingefügt -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
