@@ -66,15 +66,12 @@ Wahl-Chatbot/
 ├── fly.toml                     # Fly.io App-Konfiguration
 ├── requirements.txt             # Python-Abhängigkeiten
 ├── backend/
-│   ├── app.py                   # Flask Backend-Server mit Validierung & Logging
-│   ├── config.py                # Zentrale Konfigurationsverwaltung
-│   ├── utils.py                 # Logger und Hilfsfunktionen
-│   └── openai_test.py           # Umfassendes Testscript für API & Konfiguration
+│   ├── app.py                   # Flask Backend-Server (nutzt absolute Pfade)
+│   ├── openai_test.py           # Testscript für OpenAI API
+│   └── knowledge_base.json      # Wissensbasis: Parteienpositionen nach Themen
 ├── data/
-│   ├── knowledge_base.json      # Wissensbasis: Parteienpositionen nach Themen
 │   ├── parties_info.json        # Name, Slogan und Beschreibung der Parteien
-│   ├── faqs.json                # Beispiel-Fragen für den Chatbot (15 Fragen)
-│   └── system_prompt.txt        # System-Prompt für den KI-Chatbot
+│   └── faqs.json                # Beispiel-Fragen für den Chatbot (15 Fragen)
 └── frontend/
     ├── index.html               # Hauptseite des Chatbots
     ├── app.js                   # Frontend-Logik (Chat, Verlauf, Vorschläge)
