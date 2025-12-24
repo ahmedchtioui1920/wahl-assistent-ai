@@ -2,15 +2,36 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Wahl-Chatbot</title>
+    <link rel="icon" type="image/png" href="/wahl-chatbot-logo1.PNG?v=2">
+    <link rel="apple-touch-icon" href="/wahl-chatbot-logo1.PNG?v=2">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLZXS7YFDJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PLZXS7YFDJ');
+    </script>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <img src="/wahl-chatbot-logo1.PNG" alt="Loading" class="loading-logo">
+            <h2 class="loading-text">Wahl-Chatbot wird geladen...</h2>
+        </div>
+    </div>
+
     <div class="chat-container">
 
         <!-- LEFT PANEL: Chat History -->
-        <div class="history-box">
+        <div class="history-box" id="historyBox">
+            <button class="close-sidebar" id="closeHistory">✕</button>
             <div class="history-header">
                 <h2>Verlauf</h2>
                 <button id="newChatBtn">Neuer Chat</button>
@@ -18,21 +39,35 @@
             <ul id="history-list"></ul>
         </div>
 
+        <!-- LEFT TOGGLE BUTTON -->
+        <button class="toggle-sidebar left-toggle" id="toggleHistory">☰</button>
+
         <!-- CENTER PANEL: Active Chat -->
         <div class="chat-box">
             <div class="chat-header">
+                <img src="/wahl-chatbot-logo1.PNG" alt="Wahl-Chatbot Logo" class="chat-logo hidden" id="headerLogo">
                 <h1>Wahl-Chatbot</h1>
-                <p>Stelle eine Frage zu den Parteien oder wähle eine Beispiel-Frage aus.</p>
             </div>
-            <div class="chat-messages" id="messages"></div>
+            <div class="chat-messages" id="messages">
+                <div class="empty-state" id="emptyState">
+                    <div>
+                        <img src="/wahl-chatbot-logo1.PNG" alt="Wahl-Chatbot Logo" class="chat-logo-large">
+                        <p class="empty-subtitle">Stelle eine Frage zu den Parteien oder wähle eine Beispiel-Frage aus.</p>
+                    </div>
+                </div>
+            </div>
             <div class="chat-input-area">
                 <input type="text" id="userInput" placeholder="Schreibe deine Frage...">
                 <button id="sendBtn">Senden</button>
             </div>
         </div>
 
+        <!-- RIGHT TOGGLE BUTTON -->
+        <button class="toggle-sidebar right-toggle" id="toggleSuggestions">❓</button>
+
         <!-- RIGHT PANEL: Suggestions -->
-        <div class="suggestions-box">
+        <div class="suggestions-box" id="suggestionsBox">
+            <button class="close-sidebar" id="closeSuggestions">✕</button>
             <h2>Beispiel-Fragen</h2>
             <ul id="suggestion-list"></ul>
         </div>

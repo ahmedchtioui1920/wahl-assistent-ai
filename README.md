@@ -1,5 +1,7 @@
 # Wahl-Chatbot – Politischer Chatbot zur Parteieninformation
 
+![Wahl-Chatbot Demo](Screenshot.gif)
+
 ## Projektbeschreibung
 Der **Wahl-Chatbot** ist ein Prototyp, der Benutzer:innen ermöglicht, Fragen zu fiktiven politischen Parteien zu stellen.  
 Ziel des Projekts ist es, **Algorithmic Accountability** zu untersuchen und zu zeigen, wie KI-basierte Systeme auf politische Fragen neutral und sachlich antworten können.  
@@ -66,12 +68,15 @@ Wahl-Chatbot/
 ├── fly.toml                     # Fly.io App-Konfiguration
 ├── requirements.txt             # Python-Abhängigkeiten
 ├── backend/
-│   ├── app.py                   # Flask Backend-Server (nutzt absolute Pfade)
-│   ├── openai_test.py           # Testscript für OpenAI API
-│   └── knowledge_base.json      # Wissensbasis: Parteienpositionen nach Themen
+│   ├── app.py                   # Flask Backend-Server mit Validierung & Logging
+│   ├── config.py                # Zentrale Konfigurationsverwaltung
+│   ├── utils.py                 # Logger und Hilfsfunktionen
+│   └── openai_test.py           # Umfassendes Testscript für API & Konfiguration
 ├── data/
+│   ├── knowledge_base.json      # Wissensbasis: Parteienpositionen nach Themen
 │   ├── parties_info.json        # Name, Slogan und Beschreibung der Parteien
-│   └── faqs.json                # Beispiel-Fragen für den Chatbot (15 Fragen)
+│   ├── faqs.json                # Beispiel-Fragen für den Chatbot (15 Fragen)
+│   └── system_prompt.txt        # System-Prompt für den KI-Chatbot
 └── frontend/
     ├── index.html               # Hauptseite des Chatbots
     ├── app.js                   # Frontend-Logik (Chat, Verlauf, Vorschläge)

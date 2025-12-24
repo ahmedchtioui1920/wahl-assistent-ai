@@ -4,9 +4,79 @@ const sendBtn = document.getElementById('sendBtn');
 const suggestionList = document.getElementById('suggestion-list');
 const historyList = document.getElementById('history-list');
 const newChatBtn = document.getElementById('newChatBtn');
+const emptyState = document.getElementById('emptyState');
+const headerLogo = document.getElementById('headerLogo');
+const loadingScreen = document.getElementById('loadingScreen');
+
+// Hide loading screen after page loads
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+    }, 1000);
+});
+
+const historyBox = document.getElementById('historyBox');
+const suggestionsBox = document.getElementById('suggestionsBox');
+const toggleHistory = document.getElementById('toggleHistory');
+const toggleSuggestions = document.getElementById('toggleSuggestions');
+const closeHistory = document.getElementById('closeHistory');
+const closeSuggestions = document.getElementById('closeSuggestions');
+const chatBox = document.querySelector('.chat-box');
 
 let chatHistory = [];
 let previousChats = [];
+
+// Toggle sidebar functions
+function toggleHistorySidebar() {
+    historyBox.classList.toggle('collapsed');
+    toggleHistory.classList.toggle('visible');
+    updateChatBoxWidth();
+    
+    // Close suggestions if open on mobile
+    if (window.innerWidth <= 1100 && !historyBox.classList.contains('collapsed')) {
+        suggestionsBox.classList.add('collapsed');
+    }
+}
+
+function toggleSuggestionsSidebar() {
+    suggestionsBox.classList.toggle('collapsed');
+    toggleSuggestions.classList.toggle('visible');
+    updateChatBoxWidth();
+    
+    // Close history if open on mobile
+    if (window.innerWidth <= 1100 && !suggestionsBox.classList.contains('collapsed')) {
+        historyBox.classList.add('collapsed');
+    }
+}
+
+function updateChatBoxWidth() {
+    const historyCollapsed = historyBox.classList.contains('collapsed');
+    const suggestionsCollapsed = suggestionsBox.classList.contains('collapsed');
+    
+    chatBox.classList.remove('expanded-left', 'expanded-right', 'expanded-both');
+    
+    if (historyCollapsed && suggestionsCollapsed) {
+        chatBox.classList.add('expanded-both');
+    } else if (historyCollapsed) {
+        chatBox.classList.add('expanded-left');
+    } else if (suggestionsCollapsed) {
+        chatBox.classList.add('expanded-right');
+    }
+}
+
+// Event listeners for toggle buttons
+toggleHistory.addEventListener('click', toggleHistorySidebar);
+toggleSuggestions.addEventListener('click', toggleSuggestionsSidebar);
+closeHistory.addEventListener('click', toggleHistorySidebar);
+closeSuggestions.addEventListener('click', toggleSuggestionsSidebar);
+
+// Initialize collapsed state on mobile
+if (window.innerWidth <= 1100) {
+    historyBox.classList.add('collapsed');
+    suggestionsBox.classList.add('collapsed');
+    toggleHistory.classList.add('visible');
+    toggleSuggestions.classList.add('visible');
+}
 
 // Load 15 suggestions from JSON
 async function loadSuggestions() {
@@ -20,7 +90,11 @@ async function loadSuggestions() {
             li.textContent = q;
             li.addEventListener('click', () => {
                 userInput.value = q;
-                sendMessage();
+                userInput.focus();
+                // Close suggestions sidebar on mobile after selection
+                if (window.innerWidth <= 1100 && !suggestionsBox.classList.contains('collapsed')) {
+                    toggleSuggestionsSidebar();
+                }
             });
             suggestionList.appendChild(li);
         });
@@ -31,6 +105,12 @@ async function loadSuggestions() {
 
 // Add message to chat window
 function addMessage(text, sender) {
+    // Hide empty state and show header logo when first real message appears
+    if (emptyState && !emptyState.classList.contains('hidden')) {
+        emptyState.classList.add('hidden');
+        if (headerLogo) headerLogo.classList.remove('hidden');
+    }
+
     const div = document.createElement('div');
     div.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
     div.textContent = text;
@@ -81,6 +161,10 @@ function loadChat(summary) {
     if (index >= 0) {
         chatHistory = [...previousChats[index]];
         renderChat();
+        // Close history sidebar on mobile after loading chat
+        if (window.innerWidth <= 1100 && !historyBox.classList.contains('collapsed')) {
+            toggleHistorySidebar();
+        }
     }
 }
 
@@ -91,6 +175,13 @@ function renderChat() {
         addMessage(m.user, 'user');
         addMessage(m.bot, 'bot');
     });
+
+    // If there are no messages, show empty state again
+    if (chatHistory.length === 0 && emptyState) {
+        messagesEl.appendChild(emptyState);
+        emptyState.classList.remove('hidden');
+        if (headerLogo) headerLogo.classList.add('hidden');
+    }
 }
 
 // Start new chat
@@ -98,6 +189,18 @@ function startNewChat() {
     saveChatToHistory();
     chatHistory = [];
     messagesEl.innerHTML = '';
+    // Show empty state and hide header logo on fresh chat
+    if (emptyState) {
+        messagesEl.appendChild(emptyState);
+        emptyState.classList.remove('hidden');
+    }
+    if (headerLogo) {
+        headerLogo.classList.add('hidden');
+    }
+    // Close history sidebar on mobile after new chat
+    if (window.innerWidth <= 1100 && !historyBox.classList.contains('collapsed')) {
+        toggleHistorySidebar();
+    }
 }
 
 sendBtn.addEventListener('click', sendMessage);
